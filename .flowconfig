@@ -1,0 +1,14 @@
+[ignore]
+.*/node_modules/gitbook-cli/node_modules/.*
+
+[include]
+
+[libs]
+
+[options]
+munge_underscores=true
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
+suppress_comment=\\(.\\|\n\\)*\\$FlowIssue
+
+[version]
+0.14.0

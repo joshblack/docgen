@@ -1,0 +1,23 @@
+{
+  "name": "docgen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "NODE_ENV=test mocha",
+    "test:watch": "NODE_ENV=test mocha --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel": "^5.8.21",
+    "bluebird": "^2.9.34",
+    "gitbook-cli": "^0.3.4",
+    "invariant": "^2.1.0",
+    "react": "^0.13.3"
+  },
+  "devDependencies": {
+    "expect": "^1.9.0",
+    "mocha": "^2.2.5"
+  }
+}
