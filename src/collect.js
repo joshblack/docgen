@@ -10,6 +10,5 @@ import reduceVisitors from './reduceVisitors';
 export default function collect(files, plugins) {
   const visitors = reduceVisitors(plugins);
 
-  return files.reduce(
-    (acc, file) => acc.concat(visit(file.ast, visitors)), []);
+  return files.reduce((acc, file) => acc.concat(visit(file.ast, visitors)), []);
 }

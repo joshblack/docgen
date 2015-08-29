@@ -4,6 +4,15 @@
  *
  */
 
+/**
+ * Consolidate duplicate visitors from a collection of plugins. Idea is to
+ * transform these duplicate visitors into a single visitor key on an object
+ * that has an array of handlers that represent the functions called by the
+ * duplicate visitors.
+ *
+ * @param  {Array<Plugin>} plugins
+ * @return {object}
+ */
 export default function reduceVisitors(plugins) {
   return plugins.reduce((acc, plugin) => {
     const visitorNames = Object.keys(plugin['visitors']);

@@ -38,7 +38,4 @@ describe('#visit', () => {
 
     expect(visit(ast, visitors)).toEqual([{ local: 'Foo' }, { from: 'foo' }]);
   });
-
-  // What should it do if different plugins are reporting different things to
-  // the same key?
 });

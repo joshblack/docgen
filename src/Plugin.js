@@ -7,6 +7,10 @@
 import invariant from 'invariant';
 import { types as t } from 'babel';
 
+/**
+ * class representing the idea of a Plugin, that maintains a name and an
+ * object with keys that represent visitors of an AST.
+ */
 export default class Plugin {
   constructor(name, visitors) {
     const invalidVisitors = Object.keys(visitors)
@@ -14,7 +18,7 @@ export default class Plugin {
 
     invariant(
       invalidVisitors,
-      'You\'re using unsupported visitor types. See: %s',
+      'You\'re using unsupported visitor types. Invalid visitors: %s',
       invalidVisitors
     );
 

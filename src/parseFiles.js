@@ -11,6 +11,14 @@ import getFilesFromPath from './getFilesFromPath';
 const readFile = Promise.promisify(require('fs').readFile);
 const DOC_REGEXP = /\* \@doc ?(\S+)?\r?\n/;
 
+/**
+ * Check if a given file has included the `@doc` pragma.
+ *
+ * @param  {object} acc  Accumulated object from the `reduce` in parseFiles
+ * @param  {object} file High level information about the file
+ * @return {object}      Returned object with possible information about the
+ *                       file if it included the `@doc` pragma
+ */
 async function fileIsDoc(acc, file) {
   const { path } = file;
   const prev = await acc;
@@ -40,9 +48,13 @@ async function fileIsDoc(acc, file) {
   }
 }
 
+/**
+ * Find meta information from all files in a given path that have included the
+ * `@doc` pragma.
+ *
+ * @param  {string} path Path to the folder containing the files
+ * @return {Array<Object>} Collected meta information about the files
+ */
 export default async function parseFiles(path) {
-  const files = Promise.all(getFilesFromPath(path).reduce(fileIsDoc, []));
-
-  return files;
+  return Promise.all(getFilesFromPath(path).reduce(fileIsDoc, []));
 }
-
