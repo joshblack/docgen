@@ -48,6 +48,8 @@ It will also make sense to figure out a sensible way to group related components
 
 Finally, another goal at an application level is to integrate routing into the generated documentation. If a set routing structure is determined, it will be useful to see the entry points into an application and the data requirements at every point established by `graphql` queries.
 
+Future `@`-pragma possibility: `@doc [engine] [section/subsection]`, where the engine could be `react` or just `jsdoc`, etc.
+
 ## Checklist
 
 - [ ] Deploy to GHE Pages
