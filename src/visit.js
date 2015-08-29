@@ -11,8 +11,6 @@ export default function visit(ast, visitors) {
   const visitorActions = Object.keys(visitors)
     .reduce((acc, v) => ({ ...acc, [v]: reduceActions(v, visitors) }), {});
 
-  console.log(visitorActions);
-
   traverse(ast, visitorActions);
 
   return result;

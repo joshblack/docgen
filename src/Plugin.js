@@ -9,9 +9,16 @@ import { types as t } from 'babel';
 
 export default class Plugin {
   constructor(name, visitors) {
-    this.name = name;
+    const invalidVisitors = Object.keys(visitors)
+      .filter((visitor) => !t.TYPES[visitor]);
 
-    // Verify visitors with t.TYPES
+    invariant(
+      invalidVisitors,
+      'You\'re using unsupported visitor types. See: %s',
+      invalidVisitors
+    );
+
+    this.name = name;
     this.visitors = visitors;
   }
 }

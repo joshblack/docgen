@@ -22,12 +22,11 @@ describe('#collect', () => {
   });
 
   it('should return file information from multiple plugins', () => {
-    const [App] = files;
+    const [,,Foo] = files;
 
-    expect(collect([App], [importDeclaration, variableDeclaration]))
+    expect(collect([Foo], [importDeclaration, variableDeclaration]))
       .toEqual([
         { source: 'react', specifier: 'React' },
-        { source: './Title', specifier: 'Title' },
         { name: 'a', value: 1 }
       ]);
   });

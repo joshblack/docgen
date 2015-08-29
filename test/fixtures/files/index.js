@@ -1338,4 +1338,178 @@ module.exports = [{
   },
   "rawDoc": "* @doc general\n",
   "docSections": ["general"]
-}]
+}, {
+  "name": "foo.js",
+  "parents": [],
+  "path": "/Users/joshuablack/Desktop/docgen/test/fixtures/code/foo.js",
+  "source": "/**\n *\n * @doc general\n */\n\nimport React from 'react';\nvar a = 1;\n",
+  "ast": {
+    "type": "File",
+    "program": {
+      "type": "Program",
+      "start": 0,
+      "end": 66,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 8,
+          "column": 0
+        }
+      },
+      "sourceType": "module",
+      "body": [{
+        "type": "ImportDeclaration",
+        "start": 28,
+        "end": 54,
+        "loc": {
+          "start": {
+            "line": 6,
+            "column": 0
+          },
+          "end": {
+            "line": 6,
+            "column": 26
+          }
+        },
+        "specifiers": [{
+          "type": "ImportDefaultSpecifier",
+          "start": 35,
+          "end": 40,
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 7
+            },
+            "end": {
+              "line": 6,
+              "column": 12
+            }
+          },
+          "local": {
+            "type": "Identifier",
+            "start": 35,
+            "end": 40,
+            "loc": {
+              "start": {
+                "line": 6,
+                "column": 7
+              },
+              "end": {
+                "line": 6,
+                "column": 12
+              }
+            },
+            "name": "React",
+            "leadingComments": null
+          },
+          "leadingComments": null
+        }],
+        "importKind": "value",
+        "source": {
+          "type": "Literal",
+          "start": 46,
+          "end": 53,
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 18
+            },
+            "end": {
+              "line": 6,
+              "column": 25
+            }
+          },
+          "value": "react",
+          "rawValue": "react",
+          "raw": "'react'"
+        },
+        "leadingComments": [{
+          "type": "CommentBlock",
+          "value": "*\n *\n * @doc general\n ",
+          "start": 0,
+          "end": 26,
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 0
+            },
+            "end": {
+              "line": 4,
+              "column": 3
+            }
+          },
+          "range": [0, 26]
+        }]
+      }, {
+        "type": "VariableDeclaration",
+        "start": 55,
+        "end": 65,
+        "loc": {
+          "start": {
+            "line": 7,
+            "column": 0
+          },
+          "end": {
+            "line": 7,
+            "column": 10
+          }
+        },
+        "declarations": [{
+          "type": "VariableDeclarator",
+          "start": 59,
+          "end": 64,
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 4
+            },
+            "end": {
+              "line": 7,
+              "column": 9
+            }
+          },
+          "id": {
+            "type": "Identifier",
+            "start": 59,
+            "end": 60,
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 4
+              },
+              "end": {
+                "line": 7,
+                "column": 5
+              }
+            },
+            "name": "a"
+          },
+          "init": {
+            "type": "Literal",
+            "start": 63,
+            "end": 64,
+            "loc": {
+              "start": {
+                "line": 7,
+                "column": 8
+              },
+              "end": {
+                "line": 7,
+                "column": 9
+              }
+            },
+            "value": 1,
+            "rawValue": 1,
+            "raw": "1"
+          }
+        }],
+        "kind": "var"
+      }]
+    }
+  },
+  "rawDoc": "* @doc general\n",
+  "docSections": ["general"]
+}];

@@ -23,6 +23,6 @@ var util = require('util');
 //   }
 // });
 
-parseFiles(path.resolve(__dirname, '../test/fixtures/components'))
+parseFiles(path.resolve(__dirname, '../test/fixtures/code'))
   // .then((parsedFiles) => collect(parsedFiles, [p]));
   .then((parseFiles) => console.log(JSON.stringify(parseFiles)));
