@@ -20,7 +20,6 @@ const DOC_REGEXP = /\* \@doc ?(\S+)?\r?\n/;
  *                       file if it included the `@doc` pragma
  */
 async function fileIsDoc(acc, file) {
-  const { path } = file;
   const prev = await acc;
 
   try {

@@ -16,12 +16,6 @@ import { traverse } from 'babel';
  */
 export default function visit(ast, visitors) {
   let result = [];
-  const visitorActions = Object.keys(visitors)
-    .reduce((acc, v) => ({ ...acc, [v]: reduceActions(v, visitors) }), {});
-
-  traverse(ast, visitorActions);
-
-  return result;
 
   /**
    * Wrap all the actions of a specific visitor and pass in the args given
@@ -32,10 +26,17 @@ export default function visit(ast, visitors) {
    * @param  {object} visitors Object of visitor methods
    * @return {void}
    */
-  function reduceActions(visitor, visitors) {
-    return function (...args) {
-      result = visitors[visitor]
+  function reduceActions(visitor, pluginVisitors) {
+    return (...args) => {
+      result = pluginVisitors[visitor]
         .reduce((acc, fn) => acc.concat(fn(...args)), result);
-    }
+    };
   }
+
+  const visitorActions = Object.keys(visitors)
+    .reduce((acc, v) => ({ ...acc, [v]: reduceActions(v, visitors) }), {});
+
+  traverse(ast, visitorActions);
+
+  return result;
 }

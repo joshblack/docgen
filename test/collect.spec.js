@@ -27,7 +27,7 @@ describe('#collect', () => {
   });
 
   it('should return file information from multiple plugins', () => {
-    const [,,Foo] = files;
+    const [, , Foo] = files;
 
     expect(collect([Foo], [importDeclaration, variableDeclaration]))
       .toEqual([
@@ -42,34 +42,34 @@ describe('#collect', () => {
   });
 
   it('should return information from multiple files from a plugin', () => {
-    const [App,,Foo] = files;
+    const [App, , Foo] = files;
     const collectedInfo = collect([App, Foo], [importDeclaration]);
     const [AppInfo, FooInfo] = collectedInfo;
 
-    expect(AppInfo['meta']).toEqual([
+    expect(AppInfo.meta).toEqual([
       { source: 'react', specifier: 'React' },
       { source: './Title', specifier: 'Title' }
     ]);
 
-    expect(FooInfo['meta']).toEqual([
+    expect(FooInfo.meta).toEqual([
       { source: 'react', specifier: 'React' }
     ]);
   });
 
   it('should return information from multiple files from a variety of plugins', () => {
-    const [App,,Foo] = files;
+    const [App, , Foo] = files;
     const collectedInfo = collect(
       [App, Foo],
       [importDeclaration, variableDeclaration]
     );
     const [AppInfo, FooInfo] = collectedInfo;
 
-    expect(AppInfo['meta']).toEqual([
+    expect(AppInfo.meta).toEqual([
       { source: 'react', specifier: 'React' },
       { source: './Title', specifier: 'Title' }
     ]);
 
-    expect(FooInfo['meta']).toEqual([
+    expect(FooInfo.meta).toEqual([
       { source: 'react', specifier: 'React' },
       { name: 'a', value: 1 }
     ]);

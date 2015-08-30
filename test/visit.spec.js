@@ -12,7 +12,7 @@ const ast = parse(`import Foo from 'foo';`);
 
 describe('#visit', () => {
   it('should correctly report the results of a single visitor', () => {
-    function mock(node) {
+    function mock() {
       return { foo: 'bar' };
     }
 
