@@ -1,5 +1,7 @@
 # Docgen
 
+[![Code Climate](https://codeclimate.com/github/joshblack/docgen/badges/gpa.svg)](https://codeclimate.com/github/joshblack/docgen)
+
 > Toolchain used for automatically developing documentation for your library.
 
 ## Objective
