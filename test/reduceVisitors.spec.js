@@ -1,3 +1,9 @@
+/**
+ * Copyright (c) 2015 Josh Black
+ * All Rights Reserved.
+ *
+ */
+
 import expect from 'expect';
 import Plugin from '../src/Plugin';
 import reduceVisitors from '../src/reduceVisitors';
